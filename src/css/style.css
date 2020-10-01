@@ -1,0 +1,84 @@
+body {
+	margin: 0;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.boxContainer {
+	perspective: 100vh;
+}
+
+.box {
+	width: 30vh;
+	height: 30vh;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: rotateX(-20deg) rotateY(40deg);
+	box-shadow: 8vh 7vh 7vh black;
+}
+
+.face {
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	width: 30vh;
+	height: 30vh;
+	position: absolute;
+	border: 1px solid #99501d;
+}
+
+.plank {
+	grid-column: 1fr;
+	grid-row: 1fr;
+	border: 2px ridge #99501d;
+	background: linear-gradient(
+		to left bottom,
+		rgba(233, 223, 196, 1) 0%,
+		rgba(233, 223, 196, 1) 1%,
+		rgba(237, 227, 200, 1) 2%,
+		rgba(237, 227, 200, 1) 24%,
+		rgba(235, 221, 195, 1) 25%,
+		rgba(233, 223, 196, 1) 48%,
+		rgba(235, 221, 195, 1) 49%,
+		rgba(230, 216, 189, 1) 52%,
+		rgba(230, 216, 189, 1) 53%,
+		rgba(233, 219, 192, 1) 54%,
+		rgba(230, 216, 189, 1) 55%,
+		rgba(230, 216, 189, 1) 56%,
+		rgba(233, 219, 192, 1) 57%,
+		rgba(230, 216, 189, 1) 58%,
+		rgba(230, 216, 189, 1) 73%,
+		rgba(233, 219, 192, 1) 74%,
+		rgba(233, 219, 192, 1) 98%,
+		rgba(235, 221, 195, 1) 100%
+	);
+}
+
+.boxFront {
+	transform: rotateY(0deg) translateZ(5vh);
+}
+
+.boxBack {
+	transform: rotateY(180deg) translateZ(25vh);
+}
+
+.boxRight {
+	transform: rotateY(90deg) translateZ(15vh) translateX(10vh);
+}
+
+.boxLeft {
+	transform: rotateY(-90deg) translateZ(15vh) translateX(-10vh);
+}
+
+.boxTop {
+	transform: rotateX(90deg) translateZ(15vh) translateY(-10vh);
+}
+
+.boxBottom {
+	transform: rotateX(-90deg) translateZ(15vh) translateY(10vh);
+}
